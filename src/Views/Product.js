@@ -3,7 +3,7 @@ import Axios from "axios"
 
 function Product()
 {
-    const url = "http://localhost:49153/api/Game/GetGamesByName?gameName=Pokemon Unite"
+    const url = "/api/Game/GetGamesByName?gameName=Pokemon"
     const [game, setGame] = useState(null)
 
     useEffect(() =>{
@@ -18,8 +18,14 @@ function Product()
     if(game)
     {
         return(
-            <div>
-
+            <div className="container">
+                {game.value.map(g => (
+                    <ol>
+                        <h1>{g.name}</h1>
+                            <strong>{g.rating}</strong><br/>
+                        <cite>{g.summary}</cite>
+                    </ol>
+                ))}
             </div>
         )
     }

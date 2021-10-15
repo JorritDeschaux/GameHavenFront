@@ -1,6 +1,6 @@
 {
   "name": "gamehavenfront",
-  "proxy": "http://localhost:49153",
+  "proxy": "http://localhost:49154",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
