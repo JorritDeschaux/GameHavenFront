@@ -3,7 +3,7 @@ import Axios from "axios"
 
 function Product()
 {
-    const url = "/api/Game/GetGamesByName?gameName=Pokemon"
+    const url = "/api/Games/GetGamesByName?gameName=Pokemon"
     const [game, setGame] = useState(null)
 
     useEffect(() =>{
