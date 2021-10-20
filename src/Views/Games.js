@@ -4,7 +4,7 @@ import Layout from "../Components/Layout/Layout";
 
 function Games()
 {
-    const url = "/api/Games/GetGamesByName?gameName=Portal"
+    const url = "/api/Games/GetGamesByName?gameName=Minecraft"
     const [game, setGame] = useState(null)
 
     useEffect(() =>{
@@ -19,12 +19,12 @@ function Games()
     if(game)
     {
         return(
-<>
-            <Layout />
+            <>
+                <Layout />
                 <div className="row">
                     {game.value.map(g => (
 
-                            <div className="col-sm-3">
+                            <div className="col-sm-3" style={{ paddingTop: 20 }}>
                                 <h1>{g.name}</h1>
                                 <strong>{g.rating}</strong><br/>
                                 <cite>{g.summary}</cite>
@@ -32,7 +32,7 @@ function Games()
 
                     ))}
                 </div>
-</>
+            </>
         )
     }
 

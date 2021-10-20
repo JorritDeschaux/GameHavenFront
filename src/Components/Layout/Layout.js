@@ -6,7 +6,7 @@ import {Container} from "react-bootstrap";
 
 const Layout =({children}) =>{
     return(
-        <Navbar class="navbar-static-top" collapseOnSelect expand="lg" bg="dark" variant="dark" position="sticky">
+        <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
             <Container>
                 <Navbar.Brand href="/">GameHaven</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -14,7 +14,7 @@ const Layout =({children}) =>{
                     <Nav className="me-auto">
                         <Nav.Link href="Games">Games</Nav.Link>
                         <Nav.Link href="Forum">Forum</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                        <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
