@@ -6,13 +6,14 @@ import{
 } from "react-router-dom"
 
 import Home from "./Views/Home";
-import Product from "./Views/Product";
+import Games from "./Views/Games";
 import About from "./Views/About";
 
 function App()
 {
     return (
     <div>
+
         <Router>
                 <div className="p-3">
                     <Switch>
@@ -22,12 +23,13 @@ function App()
                         <Route path="/about">
                             <About />
                         </Route>
-                        <Route path="/products">
-                            <Product />
+                        <Route path="/Games">
+                            <Games />
                         </Route>
                     </Switch>
                 </div>
         </Router>
+
     </div>
 );
 

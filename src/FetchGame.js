@@ -6,7 +6,7 @@ export default class FetchGame extends React.Component {
     }
 
     async componentDidMount() {
-        const url = "/api/Game/GetGamesByName?gameName=Pokemon Unite";
+        const url = "/api/Games/GetGamesByName?gameName=Pokemon Unite";
         const response = await fetch(url);
 
         const data = await response.json();
