@@ -23,13 +23,11 @@ function Games()
                 <Layout />
                 <div className="row">
                     {game.value.map(g => (
-
-                            <div className="col-sm-3" style={{ paddingTop: 20 }}>
-                                <h1>{g.name}</h1>
-                                <strong>{g.rating}</strong><br/>
-                                <cite>{g.summary}</cite>
-                            </div>
-
+                        <div className="col-sm-3" style={{ paddingTop: 20 }}>
+                            <h1>{g.name}</h1>
+                            <strong>{g.rating}</strong><br/>
+                            <cite>{g.summary}</cite>
+                        </div>
                     ))}
                 </div>
             </>
