@@ -1,41 +1,19 @@
-import React, {useEffect, useState} from "react";
-import Axios from "axios"
+import React from "react";
+import request from "../Components/Axios/Request";
 import Layout from "../Components/Layout/Layout";
+import Row from "../GameComponents/Row";
 
 function Games()
 {
-    const url = "/api/Games/GetGamesByName?gameName=Minecraft"
-    const [game, setGame] = useState(null)
-
-    useEffect(() =>{
-        Axios.get(url)
-            .then(response => {
-            setGame(response.data)
-        })
-    }, [url])
-
-    console.log(game)
-
-    if(game)
-    {
-        return(
-            <>
-                <Layout />
-                <div className="row">
-                    {game.value.map(g => (
-                        <div className="col-sm-3" style={{ paddingTop: 20 }}>
-                            <h1>{g.name}</h1>
-                            <strong>{g.rating}</strong><br/>
-                            <cite>{g.summary}</cite>
-                        </div>
-                    ))}
-                </div>
-            </>
-        )
-    }
-
     return(
-        <div>
+        <div className="homeScreen">
+
+            <Layout/>
+
+            <Row
+                title='FOUND GAMES'
+                fetchUrl={request.fetchGamesByName}
+            />
 
         </div>
     )
