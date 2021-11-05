@@ -6,16 +6,15 @@ import Row from "../GameComponents/Row";
 function Games()
 {
     return(
-        <div className="homeScreen">
+        <>
 
             <Layout/>
 
             <Row
-                title='FOUND GAMES'
+                title='Search Results'
                 fetchUrl={request.fetchGamesByName}
             />
-
-        </div>
+        </>
     )
 }
 

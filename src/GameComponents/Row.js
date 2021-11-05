@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import axios from "../Components/Axios/axios";
+import "./Row.css";
 
 function Row({title, fetchUrl}) {
     const [games, setGames] = useState([]);
@@ -17,17 +18,17 @@ function Row({title, fetchUrl}) {
     console.log(games)
 
     return(
-        <div className="row">
+        <div className="container">
             <h2>{title}</h2>
 
-            {games.map(game => (
-                <ul key={game.id}>
-                    <li>
-                        <div>{game.name}</div>
-                    </li>
-                </ul>
-            ))}
+            <ul className="row">
+            {games.map((game, index) => (
 
+                        <li key={game.id} className="col-md-3">
+                            <div>{game.name}</div>
+                        </li>
+                ))}
+            </ul>
         </div>
     );
 }

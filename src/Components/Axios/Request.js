@@ -1,6 +1,6 @@
 
 const request = {
-    fetchGamesByName: `/Games/GetGamesByName`,
+    fetchGamesByName: `/Games/SearchGame/?gameName=Portal`,
 };
 
 export default request;

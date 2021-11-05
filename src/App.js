@@ -15,7 +15,7 @@ function App()
     <div>
 
         <Router>
-                <div className="p-3">
+                <div>
                     <Switch>
                         <Route exact path="/">
                             <Home />
