@@ -4,5 +4,14 @@ ul {
 
 .gamecard {
     padding: 0.5rem;
+    border-style: dot-dash;
+    border-width: 0.1rem;
+    flex: 0;
 }
+
+.gamecard-image {
+    position: relative;
+}
+
+
 

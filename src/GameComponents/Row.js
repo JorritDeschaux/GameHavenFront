@@ -24,9 +24,15 @@ function Row({title, fetchUrl}) {
             <ul className="row">
             {games.map((game, index) => (
 
-                        <li key={index} className="gamecard col-sm">
-                            <img src="//images.igdb.com/igdb/image/upload/t_thumb/em1y2ugcwy2myuhvb9db.jpg"/>
-                            <div>{game.name}</div>
+                        <li key={index} className="gamecard">
+                             <div className= "col-sm">
+                                <div className= "gamecard-image">
+                                    <img src={game.cover?.url}/>
+                                </div>
+                                <div className="gamecard-title">
+                                    {game.name}
+                                </div>
+                             </div>
                         </li>
                 ))}
             </ul>

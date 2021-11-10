@@ -1,0 +1,42 @@
+footer {
+    color: black;
+}
+
+footer h5 {
+    margin-bottom: 1rem;
+}
+
+footer a:link {
+    color: #ffffff;
+    text-decoration: underline 0.15rem;
+    text-underline-position: under;
+}
+
+footer footer:visited {
+    color: #ffffff;
+    text-decoration: underline 0.15rem;
+    text-underline-position: under;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: underline 0.15rem;
+    text-underline-position: under;
+}
+
+footer a:active {
+    text-decoration: underline 0.15rem;
+    text-underline-position: under;
+}
+
+footer ul {
+    padding-left: 0rem;
+}
+
+footer ul > li {
+    list-style-type: none;
+}
+
+footer.container {
+    background-color: black;
+}

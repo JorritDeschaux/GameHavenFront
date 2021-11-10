@@ -22,6 +22,8 @@ const Layout =({children}) =>{
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
+                    <input type="text" placeholder="Search Game..." style={{marginTop: 5}}
+                    />
                     <Nav>
                         <Nav.Link href="#about">About</Nav.Link>
                         <Nav.Link href="#login">

@@ -2,29 +2,25 @@ import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
 import request from "../Components/Axios/Request";
 import Row from "../GameComponents/Row";
+import {Footer} from "../Components/Layout/Footer";
 
 function Home()
 {
-    const [searchTerm, setSearchTerm] = useState("")
-
     return(
         <>
             <Layout/>
-        <div className="container">
-            <h1>Home Page</h1>
-            <div>
-                <input type="text" placeholder="Search Game..." style={{marginTop: 5}}
-                       onChange={event => {
-                           setSearchTerm(event.target.value)}}
-                />
+                <div className="container">
+                    <h1>Home Page</h1>
+                    <div>
 
-                <Row
-                    title='New and Popular'
-                    fetchUrl={request.fetchRecentGamesDiscover}
-                />
-            </div>
+                        <Row
+                            title='New and Popular'
+                            fetchUrl={request.fetchRecentGamesDiscover}
+                        />
+                    </div>
 
-        </div>
+                </div>
+
         </>
     )
 }
