@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
+import request from "../Components/Axios/Request";
+import Row from "../GameComponents/Row";
 
 function Home()
 {
@@ -14,6 +16,11 @@ function Home()
                 <input type="text" placeholder="Search Game..." style={{marginTop: 5}}
                        onChange={event => {
                            setSearchTerm(event.target.value)}}
+                />
+
+                <Row
+                    title='New and Popular'
+                    fetchUrl={request.fetchRecentGamesDiscover}
                 />
             </div>
 
