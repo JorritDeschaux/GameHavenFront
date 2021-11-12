@@ -8,6 +8,7 @@ import{
 import Home from "./Views/Home";
 import Games from "./Views/Games";
 import About from "./Views/About";
+import Login from "./Views/Login";
 
 function App()
 {
@@ -20,11 +21,14 @@ function App()
                         <Route exact path="/">
                             <Home />
                         </Route>
-                        <Route path="/about">
+                        <Route path="/About">
                             <About />
                         </Route>
                         <Route path="/Games">
                             <Games />
+                        </Route>
+                        <Route path="/Login">
+                            <Login />
                         </Route>
                     </Switch>
                 </div>

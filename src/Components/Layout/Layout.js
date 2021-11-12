@@ -26,7 +26,7 @@ const Layout =({children}) =>{
                     />
                     <Nav>
                         <Nav.Link href="#about">About</Nav.Link>
-                        <Nav.Link href="#login">
+                        <Nav.Link href="Login">
                             Login
                         </Nav.Link>
                     </Nav>
