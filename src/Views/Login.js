@@ -1,9 +1,6 @@
 import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
-import request from "../Components/Axios/Request";
 import axios from "../Components/Axios/axios";
-import Cookie from "js-cookie"
-import {Badge} from "react-bootstrap";
 
 function Login()
 {
@@ -11,14 +8,14 @@ function Login()
     const [password, setPassword] = useState("");
 
     const submitHandler = (e) => {e.preventDefault()
-        axios.post('http://localhost:5000/api/Authentication/Login', {
+        axios.post('/Authentication/Login', {
         mail: email,
         password
     })
         .then(token => {
             console.log(token)
-            sessionStorage.setItem('token', token)
-            sessionStorage.setItem('loggedIn', 'true')
+            localStorage.setItem('token', token.data)
+            localStorage.setItem('loggedIn', 'true')
         })}
 
     return(

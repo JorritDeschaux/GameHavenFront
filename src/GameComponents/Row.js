@@ -19,7 +19,7 @@ function Row({title, fetchUrl}) {
 
     return(
         <div className="container">
-            <h2>{title}</h2>
+            <h2 className="center">{title}</h2>
 
             <ul className="row">
             {games.map((game, index) => (

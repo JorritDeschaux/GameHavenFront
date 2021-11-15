@@ -38,7 +38,7 @@ export class Footer extends Component {
                                 <a href="tel:+31404002856">+31 (0)40 400 28 56</a>
                             </li>
                             <li>
-                                <a href="mailto:ahoy@stuur.men">ahoy@stuur.men</a>
+                                <a href="mailto:ahoy@stuur.men">j.deschaux@fontys.nl</a>
                             </li>
                         </ul>
                     </div>
