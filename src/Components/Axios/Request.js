@@ -1,7 +1,7 @@
 
 const request = {
-    fetchGamesByName: `/Games/SearchGame/?gameName=Portal`,
-    fetchRecentGamesDiscover: `/Discover/Index`,
+    fetchGamesByName: `/games/search/`,
+    fetchRecentGamesDiscover: `/discover`,
 };
 
 export default request;

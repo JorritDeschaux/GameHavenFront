@@ -8,7 +8,7 @@ function Login()
     const [password, setPassword] = useState("");
 
     const submitHandler = (e) => {e.preventDefault()
-        axios.post('/Authentication/Login', {
+        axios.post('/auth/login', {
         mail: email,
         password
     })

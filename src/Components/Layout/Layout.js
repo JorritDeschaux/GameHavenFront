@@ -1,10 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import NavDropdown from 'react-bootstrap/NavDropdown'
 import {Container} from "react-bootstrap";
+import axios from "../Axios/axios";
 
 const Layout =({children}) =>{
+
+    const [search, setSearch] = useState([]);
+
+    const submitHandler = (e) => {e.preventDefault()
+        axios.post('/search/' + search, {
+
+        })
+            .then(response => {
+                window.location = "/Games/"
+            })}
+
     return(
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
             <Container>
@@ -12,6 +24,14 @@ const Layout =({children}) =>{
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
+                        <form>
+                            <input type="text" placeholder="Search Game..." style={{marginTop: 5}}
+                                   onChange={(e) => setSearch(e.target.value)}
+                            />
+                            <button type="submit" value="Submit" onClick={submitHandler}>
+                                Search
+                            </button>
+                        </form>
                         <Nav.Link href="Games">Games</Nav.Link>
                         <Nav.Link href="Forum">Forum</Nav.Link>
                         <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
@@ -22,8 +42,6 @@ const Layout =({children}) =>{
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
-                    <input type="text" placeholder="Search Game..." style={{marginTop: 5}}
-                    />
                     <Nav>
                         <Nav.Link href="#about">About</Nav.Link>
                         <Nav.Link href="Login">

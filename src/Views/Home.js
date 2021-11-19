@@ -18,7 +18,7 @@ export default class Home extends Component
                 Authorization: localStorage.getItem('token')
             }
         }
-        axios.get('Authentication/User', config).then (
+        axios.get('auth/verify', config).then (
             res => {
                 this.setState({
                     user: res.data
@@ -56,7 +56,6 @@ export default class Home extends Component
         <>
                 <Layout/>
                     <div className="container">
-                        <h1>Home Page</h1>
                         <div>
 
                             <Row
