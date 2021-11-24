@@ -9,6 +9,7 @@ import Home from "./Views/Home";
 import Games from "./Views/Games";
 import About from "./Views/About";
 import Login from "./Views/Login";
+import Logout from "./Views/Logout";
 
 function App()
 {
@@ -21,14 +22,23 @@ function App()
                         <Route exact path="/">
                             <Home />
                         </Route>
-                        <Route path="/About">
+                        <Route exact path="/discover">
+                            <Home />
+                        </Route>
+                        <Route path="/about">
                             <About />
                         </Route>
-                        <Route path="/Games">
+                        <Route exact path="/games">
                             <Games />
                         </Route>
-                        <Route path="/Login">
+                        <Route path="/games/:name">
+                            <Games />
+                        </Route>
+                        <Route path="/login">
                             <Login />
+                        </Route>
+                        <Route path="/logout">
+                            <Logout />
                         </Route>
                     </Switch>
                 </div>

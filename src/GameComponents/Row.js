@@ -1,19 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import axios from "../Components/Axios/axios";
 import "./Row.css";
+import {useParams} from "react-router-dom";
+import request from "../Components/Axios/Request";
 
 function Row({title, fetchUrl}) {
     const [games, setGames] = useState([]);
 
+    const { name } = useParams()
+
     useEffect(() => {
         async function fetchData() {
-            const request = await axios.get(fetchUrl);
-            setGames(request.data);
-            return request;
+            let fetch = null;
+
+            if(name === undefined) {
+                fetch = await axios.get(fetchUrl);
+            }
+            else{
+                fetch = await axios.get(fetchUrl + name);
+            }
+
+            setGames(fetch.data);
+            return fetch;
         }
 
         fetchData();
-    }, [fetchUrl])
+    }, [])
 
     console.log(games)
 
