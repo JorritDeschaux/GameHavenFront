@@ -2,16 +2,18 @@ import React, {useEffect, useState} from 'react';
 import axios from "../Components/Axios/axios";
 import "./Row.css";
 import {useParams} from "react-router-dom";
-import request from "../Components/Axios/Request";
 
 function Row({title, fetchUrl}) {
+
     const [games, setGames] = useState([]);
 
     const { name } = useParams()
 
     useEffect(() => {
+        let isMounted = true;
+
         async function fetchData() {
-            let fetch = null;
+            let fetch;
 
             if(name === undefined) {
                 fetch = await axios.get(fetchUrl);
@@ -20,12 +22,15 @@ function Row({title, fetchUrl}) {
                 fetch = await axios.get(fetchUrl + name);
             }
 
-            setGames(fetch.data);
             return fetch;
         }
 
-        fetchData();
-    }, [])
+        fetchData().then(fetch => {
+            if(isMounted) setGames(fetch.data);
+        })
+
+        return () => {isMounted = false};
+    })
 
     console.log(games)
 
@@ -39,7 +44,7 @@ function Row({title, fetchUrl}) {
                         <li key={index} className="gamecard">
                              <div className= "col-sm">
                                 <div className= "gamecard-image">
-                                    <img src={game.cover?.url}/>
+                                    <img src={game.cover?.url} alt=""/>
                                 </div>
                                 <div className="gamecard-title">
                                     {game.name}

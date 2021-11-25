@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
-import css from "./Styles/Login.css"
 
 function Login()
 {
@@ -14,8 +13,15 @@ function Login()
         password
     })
         .then(token => {
-            console.log(token)
-            localStorage.setItem('token', token.data)
+
+            try{
+                console.log(token)
+                localStorage.setItem('token', token.data)
+                window.location = "/"
+            }
+            catch (e) {
+                console.log(e)
+            }
         })}
 
     return(
@@ -25,7 +31,7 @@ function Login()
                 <h1 className="center-greeting">Login</h1>
                 <div className="grid">
                     <form>
-                        <div class="form-group">
+                        <div className="form-group">
                             <label>
                                 Email:
                                 <input type="text" className="form-control" name="email"

@@ -3,10 +3,14 @@ import Navbar from "react-bootstrap/Navbar";
 import {Container} from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link } from 'react-router-dom';
+import './Navbar.css'
+import {BiHelpCircle, BiLogIn, BiLogOut} from 'react-icons/bi'
+import {CgGames, CgProfile, MdOutlineForum} from "react-icons/all";
+
 
 function NavbarBase(props)
 {
-
     const [search, setSearch] = useState("");
 
     const submitHandler = (e) => {e.preventDefault()
@@ -22,33 +26,47 @@ function NavbarBase(props)
         return(
             <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
                 <Container>
-                    <Navbar.Brand href="/">GameHaven</Navbar.Brand>
+                    <Link to="/" className="navbar-brand">
+                        GameHaven
+                    </Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <form>
-                                <input type="text" className="form-control" placeholder="Search Game..." style={{marginTop: 5}}
-                                       onChange={(e) => setSearch(e.target.value)}
-                                />
-                                <button type="submit" className="btn btn-sm" value="Submit" onClick={submitHandler}>
-                                    Search
-                                </button>
-                            </form>
-                            <Nav.Link href="games">Games</Nav.Link>
-                            <Nav.Link href="forum">Forum</Nav.Link>
-                            <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-                                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                            </NavDropdown>
+
+                            <div className="search-nav">
+                                <form>
+                                    <div className="float-start">
+                                        <input type="text" className="form-control" placeholder="Search Game..." style={{marginTop: 8}}
+                                               onChange={(e) => setSearch(e.target.value)}
+                                        />
+                                    </div>
+
+                                    <div className="float-start">
+                                        <button type="submit" className="btn btn-outline-primary" value="Submit" onClick={submitHandler}>
+                                            Search
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <NavDropdown title={<span><CgGames/> Games</span>} children={""}/>
+
+                            <Link to="/forum" className="nav-link">
+                                < MdOutlineForum /> Forum
+                            </Link>
+                            <Link to="/about" className="nav-link">
+                                < BiHelpCircle /> About
+                            </Link>
+
                         </Nav>
+
                         <Nav>
-                            <Nav.Link href="#about">About</Nav.Link>
-                            <Nav.Link href="logout">
-                                Logout
-                            </Nav.Link>
+                            <Link to="/profile" className="nav-link">
+                                <CgProfile /> Profile
+                            </Link>
+                            <Link to="/logout" className="nav-link">
+                                <BiLogOut /> Logout
+                            </Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
@@ -59,12 +77,15 @@ function NavbarBase(props)
     return(
         <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
             <Container>
-                <Navbar.Brand href="/">GameHaven</Navbar.Brand>
+                    <Link to="/" className="navbar-brand">
+                        GameHaven
+                    </Link>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <form>
 
+                        <div className="search-nav">
+                        <form>
                             <div className="float-start">
                                 <input type="text" className="form-control" placeholder="Search Game..." style={{marginTop: 8}}
                                        onChange={(e) => setSearch(e.target.value)}
@@ -76,23 +97,24 @@ function NavbarBase(props)
                                     Search
                                 </button>
                             </div>
-
                         </form>
-                        <Nav.Link href="games">Games</Nav.Link>
-                        <Nav.Link href="forum">Forum</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
+                        </div>
+
+                            <NavDropdown title={<span><CgGames/> Games</span>} children={""}/>
+
+                            <Link to="/forum" className="nav-link">
+                                < MdOutlineForum /> Forum
+                            </Link>
+                            <Link to="/about" className="nav-link">
+                                < BiHelpCircle /> About
+                            </Link>
+
                     </Nav>
+
                     <Nav>
-                        <Nav.Link href="#about">About</Nav.Link>
-                        <Nav.Link href="login">
-                            Login
-                        </Nav.Link>
+                        <Link to="/login" className="nav-link login">
+                            <BiLogIn /> Login
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
