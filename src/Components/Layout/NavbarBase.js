@@ -42,7 +42,7 @@ function NavbarBase(props)
                                     </div>
 
                                     <div className="float-start">
-                                        <button type="submit" className="btn btn-outline-primary" value="Submit" onClick={submitHandler}>
+                                        <button type="submit" className="btn btn-outline-primary" style={{marginTop: 8}} value="Submit" onClick={submitHandler}>
                                             Search
                                         </button>
                                     </div>
@@ -93,7 +93,7 @@ function NavbarBase(props)
                             </div>
 
                             <div className="float-start">
-                                <button type="submit" className="btn btn-outline-primary" value="Submit" onClick={submitHandler}>
+                                <button type="submit" className="btn btn-outline-primary" style={{marginTop: 8}} value="Submit" onClick={submitHandler}>
                                     Search
                                 </button>
                             </div>
