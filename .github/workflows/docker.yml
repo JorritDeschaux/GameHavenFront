@@ -20,10 +20,10 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push GameHavenMain
+      - name: Build and push GameHavenFront
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: GameHavenFront/Dockerfile
+          file: Dockerfile
           push: true
           tags: jorritdeschaux/gamehaven:front-latest
