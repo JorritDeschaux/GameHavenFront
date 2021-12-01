@@ -10,9 +10,9 @@ function Row({title, fetchUrl}) {
     const { name } = useParams()
 
     useEffect(() => {
-        let isMounted = true;
 
         async function fetchData() {
+
             let fetch;
 
             if(name === undefined) {
@@ -26,11 +26,9 @@ function Row({title, fetchUrl}) {
         }
 
         fetchData().then(fetch => {
-            if(isMounted) setGames(fetch.data);
+            setGames(fetch.data);
         })
-
-        return () => {isMounted = false};
-    })
+    }, [])
 
     console.log(games)
 

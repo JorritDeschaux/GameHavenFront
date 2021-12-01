@@ -3,7 +3,7 @@ import Layout from "../Components/Layout/Layout";
 
 function Logout()
 {
-    localStorage.removeItem('token')
+    localStorage.clear()
     window.location = "/"
 
     return(

@@ -10,6 +10,7 @@ import Games from "./Views/Games";
 import About from "./Views/About";
 import Login from "./Views/Login";
 import Logout from "./Views/Logout";
+import Profile from "./Views/Profile";
 
 function App()
 {
@@ -25,19 +26,22 @@ function App()
                         <Route exact path="/discover">
                             <Home />
                         </Route>
-                        <Route path="/about">
+                        <Route exact path="/profile">
+                            <Profile/>
+                        </Route>
+                        <Route exact path="/about">
                             <About />
                         </Route>
                         <Route exact path="/games">
                             <Games />
                         </Route>
-                        <Route path="/games/:name">
+                        <Route exact path="/games/:name">
                             <Games />
                         </Route>
-                        <Route path="/login">
+                        <Route exact path="/login">
                             <Login />
                         </Route>
-                        <Route path="/logout">
+                        <Route exact path="/logout">
                             <Logout />
                         </Route>
                     </Switch>

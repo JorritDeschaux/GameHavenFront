@@ -17,6 +17,7 @@ function Login()
             try{
                 console.log(token)
                 localStorage.setItem('token', token.data)
+                localStorage.setItem('loggedIn', "true")
                 window.location = "/"
             }
             catch (e) {
