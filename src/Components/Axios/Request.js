@@ -4,6 +4,7 @@ const request = {
     //Games
     fetchGamesByName: `/games/search/`,
     fetchRecentGamesDiscover: `/discover`,
+    fetchGameById: `/games/`,
 
     //Auth
     fetchUserLogin: `/auth/login`,

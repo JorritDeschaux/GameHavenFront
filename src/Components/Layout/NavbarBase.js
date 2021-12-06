@@ -17,7 +17,7 @@ function NavbarBase(props)
 
         console.log("pressed")
 
-        window.location = '/games/' + search
+        window.location = '/search/' + search
 
     }
 

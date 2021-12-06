@@ -6,11 +6,12 @@ import{
 } from "react-router-dom"
 
 import Home from "./Views/Home";
-import Games from "./Views/Games";
 import About from "./Views/About";
 import Login from "./Views/Login";
 import Logout from "./Views/Logout";
 import Profile from "./Views/Profile";
+import Search from "./Views/Search";
+import Game from "./Views/Game";
 
 function App()
 {
@@ -32,11 +33,14 @@ function App()
                         <Route exact path="/about">
                             <About />
                         </Route>
-                        <Route exact path="/games">
-                            <Games />
+                        <Route exact path="/search">
+                            <Search />
                         </Route>
-                        <Route exact path="/games/:name">
-                            <Games />
+                        <Route exact path="/search/:name">
+                            <Search />
+                        </Route>
+                        <Route exact path="/game/:id">
+                            <Game />
                         </Route>
                         <Route exact path="/login">
                             <Login />

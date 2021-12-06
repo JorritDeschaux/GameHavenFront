@@ -32,6 +32,10 @@ function Row({title, fetchUrl}) {
 
     console.log(games)
 
+    const imageClick = (props) => {
+        window.location.href = "/game/" + props
+    }
+
     return(
         <div className="container">
             <h2 className="center">{title}</h2>
@@ -42,7 +46,8 @@ function Row({title, fetchUrl}) {
                         <li key={index} className="gamecard">
                              <div className= "col-sm">
                                 <div className= "gamecard-image">
-                                    <img src={game.cover?.url} alt=""/>
+                                    <img src={game.cover?.url} alt=""
+                                         onClick={() => imageClick(game.id)} />
                                 </div>
                                 <div className="gamecard-title">
                                     {game.name}

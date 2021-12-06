@@ -3,7 +3,7 @@ import request from "../Components/Axios/Request";
 import Layout from "../Components/Layout/Layout";
 import Row from "../GameComponents/Row";
 
-function Games()
+function Search()
 {
     return(
         <>
@@ -18,4 +18,4 @@ function Games()
     )
 }
 
-export default Games
+export default Search
