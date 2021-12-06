@@ -1,8 +1,5 @@
 import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
-import axios from "../Components/Axios/axios";
-import VerifyUser from "../Components/VerifyUser";
-import {Redirect} from "react-router";
 
 function Profile()
 {
