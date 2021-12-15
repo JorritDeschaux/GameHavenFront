@@ -9,7 +9,7 @@ const request = {
     //Auth
     fetchUserLogin: `/auth/login`,
     registerUser: `/auth/register`,
-    verifyUserWithToken: `/auth/verify`,
+    verifyUserWithToken: `/auth/userByToken`,
 
 };
 

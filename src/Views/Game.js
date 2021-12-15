@@ -3,7 +3,6 @@ import request from "../Components/Axios/Request";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
 import {useParams} from "react-router-dom";
-import css from "./Styles/Game.css"
 
 function Game()
 {

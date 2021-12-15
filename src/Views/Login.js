@@ -9,7 +9,7 @@ function Login()
 
     const submitHandler = (e) => {e.preventDefault()
         axios.post('/auth/login', {
-        mail: email,
+        email: email,
         password
     })
         .then(token => {

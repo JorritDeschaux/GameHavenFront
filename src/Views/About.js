@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React from "react";
 import Layout from "../Components/Layout/Layout";
-import axios from "../Components/Axios/axios";
 
 function About()
 {

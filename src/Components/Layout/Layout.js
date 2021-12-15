@@ -1,7 +1,6 @@
-import React, {useEffect, useState} from 'react';
+
 import VerifyUser from "../VerifyUser";
 import NavbarBase from "./NavbarBase";
-import background from "./bg.jpg"
 
 const Layout = (props) =>{
 
