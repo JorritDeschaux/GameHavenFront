@@ -4,3 +4,6 @@
     padding: 1rem 1rem !important;
 }
 
+a:link{
+    text-decoration: none;
+}
