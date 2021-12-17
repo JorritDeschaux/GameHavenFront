@@ -3,6 +3,7 @@ import request from "../Components/Axios/Request";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
 import {useParams} from "react-router-dom";
+import '../styles/main.css'
 
 function Game()
 {
@@ -31,10 +32,12 @@ function Game()
         <>
 
             <Layout/>
-            <div className="container center">
-                <div className="game-header-info">
-                <h2 className="center">{game.name}</h2>
-                <img className="cover" src={game.cover?.url} alt={game.name}/>
+            <div class="container items-center">
+                <div class="game-header-info">
+                <h2 class="text-2xl font-thin">{game.name}</h2>
+                <div class="cover blur-md">
+                    <img src={game.cover?.url} alt={game.name}/>
+                </div>
                 </div>
             </div>
 

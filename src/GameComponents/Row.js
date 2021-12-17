@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from "../Components/Axios/axios";
-import "./Row.css";
 import {useParams} from "react-router-dom";
+import "../styles/main.css";
 
 function Row({title, fetchUrl}) {
 
@@ -37,23 +37,17 @@ function Row({title, fetchUrl}) {
     }
 
     return(
-        <div className="container">
-            <h2 className="center">{title}</h2>
+        <div>
+            <h2 className="text-center text-2xl m-8"><strong>{title}</strong></h2>
 
-            <ul className="row">
-            {games.map((game, index) => (
-
-                        <li key={index} className="gamecard">
-                             <div className= "col-sm">
-                                <div className= "gamecard-image">
-                                    <img src={game.cover?.url} alt=""
-                                         onClick={() => imageClick(game.id)} />
-                                </div>
-                                <div className="gamecard-title">
-                                    {game.name}
-                                </div>
-                             </div>
-                        </li>
+            <ul className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3 p-0"> 
+            {games.map((game) => (
+                <li className="flex flex-auto bg-gray-300 rounded-lg shadow" onClick={() => imageClick(game.id)} >
+                    <div className="flex flex-none items-center">
+                        <img className="bg-black m-2 rounded-lg hover:blur-xs duration-300" src={game.cover?.url} alt=""/>
+                    </div>
+                    <p className="m-2 text-gray-900 text-sm font-medium hover:text-gray-500">{game.name}</p>
+                </li>
                 ))}
             </ul>
         </div>
