@@ -32,12 +32,18 @@ function Game()
         <>
 
             <Layout/>
-            <div class="container items-center">
-                <div class="game-header-info">
-                <h2 class="text-2xl font-thin">{game.name}</h2>
-                <div class="cover blur-md">
-                    <img src={game.cover?.url} alt={game.name}/>
-                </div>
+            <div className="container">
+                <div className="rounded-lg shadow-lg mb-2 h-screen flex flex-col sm:mx-8">
+                    <div className="flex flex-col-2 items-center justify-center">
+                        <div>
+                            <div className="flex justify-center m-4">
+                                <img src={game.cover?.url} alt={game.name}/>
+                            </div>
+                        </div>
+                        <div className="game-header-info">
+                            <h1 className="text-2xl m-4"><strong>{game.name}</strong></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
 

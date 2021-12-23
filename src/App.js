@@ -12,6 +12,7 @@ import Logout from "./Views/Logout";
 import Profile from "./Views/Profile";
 import Search from "./Views/Search";
 import Game from "./Views/Game";
+import Register from "./Views/Register";
 
 function App()
 {
@@ -44,6 +45,9 @@ function App()
                         </Route>
                         <Route exact path="/login">
                             <Login />
+                        </Route>
+                        <Route exact path="/register">
+                            <Register />
                         </Route>
                         <Route exact path="/logout">
                             <Logout />

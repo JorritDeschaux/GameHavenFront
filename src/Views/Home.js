@@ -14,15 +14,16 @@ function Home()
             <>
                 <Layout/>
                 <div className="container">
-                    <h2 className="center-greeting">Hello {user.username}</h2>
-                    <div>
+                    <div className="rounded-lg shadow-lg mb-2 h-screen flex flex-col sm:mx-8">
+                        <h1 className="text-center m-4">Hello {user.username}</h1>
+                        <div>
 
-                        <Row
-                            title='New and Popular'
-                            fetchUrl={request.fetchRecentGamesDiscover}
-                        />
+                            <Row
+                                title='New and Popular'
+                                fetchUrl={request.fetchRecentGamesDiscover}
+                            />
+                        </div>
                     </div>
-
                 </div>
             </>
 
@@ -34,14 +35,15 @@ function Home()
 
             <Layout/>
             <div className="container">
-                <div>
+                <div className="rounded-lg shadow-lg mb-2 h-screen flex flex-col sm:mx-8">
+                    <div>
 
-                    <Row
-                        title='New and Popular'
-                        fetchUrl={request.fetchRecentGamesDiscover}
-                    />
+                        <Row
+                            title='New and Popular'
+                            fetchUrl={request.fetchRecentGamesDiscover}
+                        />
+                    </div>
                 </div>
-
             </div>
 
         </>
