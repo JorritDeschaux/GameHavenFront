@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
+import '../styles/main.css'
 
 function Login()
 {
@@ -28,9 +29,9 @@ function Login()
     return(
         <>
             <Layout/>
-            <div className="container center">
-                <h1 className="center-greeting">Login</h1>
-                <div className="grid">
+            <div className="container">
+                <h1 className="text-center m-8">Login</h1>
+                <div className="flex flex-col justify-center items-center">
                     <form>
                         <div className="form-group">
                             <label>
@@ -50,7 +51,7 @@ function Login()
                             </label>
                         </div>
 
-                        <button type="submit" className="btn btn-primary" value="Submit" onClick={submitHandler}>
+                        <button type="submit" className="btn btn-primary m-2" value="Submit" onClick={submitHandler}>
                                 Login
                         </button>
 
