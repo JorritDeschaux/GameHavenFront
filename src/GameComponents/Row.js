@@ -37,8 +37,8 @@ function Row({title, fetchUrl}) {
     }
 
     return(
-        <div>
-            <h2 className="text-center text-2xl m-8"><strong>{title}</strong></h2>
+        <div className="m-2">
+            <h1 className="text-center text-4xl m-8"><strong>{title}</strong></h1>
 
             <ul className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3 p-0"> 
             {games.map((game, index) => (
