@@ -10,6 +10,7 @@ function Game()
     const { id } = useParams()
 
     const [game, setGame] = useState('')
+    const roundedRating = Math.round(game.total_Rating)
 
     const getGame = () => {
         axios.get(request.fetchGameById + id)
@@ -42,6 +43,14 @@ function Game()
                         </div>
                         <div className="game-header-info">
                             <h1 className="text-2xl m-4"><strong>{game.name}</strong></h1>
+                        </div>
+                        <div className="game-header-info">
+                            <h1 className="text-2xl m-4"><strong>{roundedRating}</strong></h1>
+                        </div> 
+                    </div>
+                    <div className="flex flex-col-4 items-center justify-center">
+                        <div>
+                            <p className="flex justify-center m-6"><strong>{game.summary}</strong></p>
                         </div>
                     </div>
                 </div>

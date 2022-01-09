@@ -5,24 +5,34 @@ import request from "./Axios/Request";
 
 function VerifyUser()
 {
+
     const [user, setUser] = React.useState(null)
 
     React.useEffect(() => {
 
-        const config = {
-            headers: {
-                Authorization: localStorage.getItem('token')
-            }
-        }
+        try{
+            const config = {
+                headers: {
+                    Authorization: localStorage.getItem('token')
+                }
+            }        
 
-        axios.get(request.verifyUserWithToken, config).then(
+            if(config.headers.Authorization === null) { return }
+            
+            axios.get(request.verifyUserWithToken, config).then(
             res => {
                 setUser(res.data)
             },
             err => {
                 console.log(err)
-            }
-        )
+            })
+        }
+        catch(error){
+            console.log(error)
+            return
+        }
+
+
     }, []);
 
     return user;

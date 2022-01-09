@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
 
-function Register()
+export function Register()
 {
     const [email, setEmail] = useState("");
     const [username, setUsername] = useState("");
@@ -11,24 +11,48 @@ function Register()
     const [firstName, setFirstName] = useState("");
     const [middleName, setMiddleName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [birthday, setBirthday] = useState("");
 
-    const submitHandler = (e) => {e.preventDefault()
-        axios.post('/auth/login', {
-        email: email,
-        password
-    })
-        .then(token => {
+    const[passwordErr, setPasswordErr] = useState({});
 
-            try{
-                console.log(token)
-                localStorage.setItem('token', token.data)
-                localStorage.setItem('loggedIn', "true")
-                window.location = "/"
-            }
-            catch (e) {
-                console.log(e)
-            }
-        })}
+    const submitHandler = (e) => {e.preventDefault() 
+        const isValid = formValidation();
+
+        const response = axios.post('/auth/register', {
+            email,
+            password,
+            username,
+            confirmPassword,
+            firstName,
+            middleName,
+            lastName,
+            birthday,
+            phone
+            }).catch(function(error){
+                if(error.response) {
+                    console.log(error.response.data);
+                    console.log(error.response.status);
+                }
+            });
+        }
+
+    const formValidation = () => {
+        const passwordErr = {};
+        let isValid = true;
+
+        if(password.trim().length < 8){
+            passwordErr.passwordShort = "Password is too short"
+            isValid = false
+        }
+        if(password != confirmPassword){
+            passwordErr.passwordsEqual = "Passwords do not match"
+            isValid = false
+        }
+
+        setPasswordErr(passwordErr);
+    }
+
 
     return(
         <>
@@ -40,7 +64,7 @@ function Register()
                         <div className="flex flex-wrap -mx-3 mb-6">
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Email<span className="text-red-600">*</span>
                                 </label>
 
@@ -50,7 +74,7 @@ function Register()
                             </div>
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Username<span className="text-red-600">*</span>
                                 </label>
 
@@ -69,7 +93,7 @@ function Register()
                             </div>
 
                             <div className="w-full md:w-1/2 px-3">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Middle Name
                                 </label>
 
@@ -79,7 +103,7 @@ function Register()
                             </div>
 
                             <div className="w-full my-2 px-3">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Last Name<span className="text-red-600">*</span>
                                 </label>
 
@@ -89,7 +113,7 @@ function Register()
                             </div>
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Password<span className="text-red-600">*</span>
                                 </label>
 
@@ -97,10 +121,13 @@ function Register()
                                         onChange={(e) => setPassword(e.target.value)}
                                     />
                                 <p className="text-xs">Password should contain atleast 1 number and should be 8 characters or longer.</p>
+                                {Object.keys(passwordErr).map((key) => {
+                                        return <div className="text-red-600 text-xs font-bold">{passwordErr[key]}</div>
+                                    })}
                             </div>
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Confirm Password<span className="text-red-600">*</span>
                                 </label>
 
@@ -110,27 +137,27 @@ function Register()
                             </div>
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Birthday
                                 </label>
 
                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow" type="date" placeholder="*****************"
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                        onChange={(e) => setBirthday(e.target.value)}
                                     />
                             </div>
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Phone number
                                 </label>
 
                                 <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow" type="phone" placeholder="061234567"
-                                        onChange={(e) => setConfirmPassword(e.target.value)}
+                                        onChange={(e) => setPhone(e.target.value)}
                                     />
                             </div>
 
                             <div>
-                                <button className="btn btn-primary m-3">
+                                <button type="submit" className="btn btn-primary m-3" value="Submit" onClick={submitHandler}>
                                     Register
                                 </button>
                             </div>

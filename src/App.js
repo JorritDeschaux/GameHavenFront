@@ -13,6 +13,7 @@ import Profile from "./Views/Profile";
 import Search from "./Views/Search";
 import Game from "./Views/Game";
 import Register from "./Views/Register";
+import Top100 from "./Views/Top100";
 
 function App()
 {
@@ -36,6 +37,9 @@ function App()
                         </Route>
                         <Route exact path="/search">
                             <Search />
+                        </Route>
+                        <Route exact path="/top100">
+                            <Top100 />
                         </Route>
                         <Route exact path="/search/:name">
                             <Search />

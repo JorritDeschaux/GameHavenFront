@@ -44,7 +44,7 @@ function Row({title, fetchUrl}) {
             {games.map((game, index) => (
                 <li key={index} className="flex flex-auto bg-gray-300 rounded-lg shadow" onClick={() => imageClick(game.id)} >
                     <div className="flex flex-none items-center">
-                        <img className="bg-black m-2 rounded-lg hover:blur-xs duration-300" src={game.cover?.url} alt=""/>
+                        <img className="bg-black m-2 rounded-lg hover:blur-xs duration-300" width="100" height="100" src={game.cover?.url} alt=""/>
                     </div>
                     <p className="m-2 text-gray-900 text-sm font-medium hover:text-gray-500">{game.name}</p>
                 </li>
