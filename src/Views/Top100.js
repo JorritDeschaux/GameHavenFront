@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../Components/Layout/Layout";
 import request from "../Components/Axios/Request";
 import Row from "../GameComponents/Row";
-import VerifyUser from "../Components/VerifyUser";
 
 function Top100()
 {

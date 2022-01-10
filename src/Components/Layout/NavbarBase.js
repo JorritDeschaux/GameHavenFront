@@ -36,7 +36,7 @@ function NavbarBase(props)
                         <div className="hidden md:flex items-center space-x-3">
                             <Link to="/top100" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500"><CgGames/> Top 100</Link>
                             <Link to="/forum" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500">< MdOutlineForum /> Forum</Link>
-                            <Link to="/search" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500">< BiHelpCircle /> About</Link>
+                            <Link to="/about" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500">< BiHelpCircle /> About</Link>
                         </div>
 
                     </div>
@@ -53,7 +53,7 @@ function NavbarBase(props)
                 <div className="hidden md:flex items-center space-x-3">
                 <Link to="/search" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500"><CgGames/> Top 100</Link>
                 <Link to="/forum" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500">< MdOutlineForum /> Forum</Link>
-                <Link to="/search" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500">< BiHelpCircle /> About</Link>
+                <Link to="/about" href="#" className="py-5 px-3 text-gray-300 hover:text-gray-500">< BiHelpCircle /> About</Link>
                 </div>
             </div>
 
@@ -90,9 +90,9 @@ function NavbarBase(props)
                 </div>
             </div>
 
-            <div class="mobile-menu hidden md:hidden">
-                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Features</a>
-                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Pricing</a>
+            <div className="mobile-menu hidden md:hidden">
+                <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Features</a>
+                <a href="#" className="block py-2 px-4 text-sm hover:bg-gray-200">Pricing</a>
             </div>
 
         </nav>

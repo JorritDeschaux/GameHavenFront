@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
+import request from "../Components/Axios/Request";
 
 export function Register()
 {
@@ -19,7 +20,7 @@ export function Register()
     const submitHandler = (e) => {e.preventDefault() 
         const isValid = formValidation();
 
-        const response = axios.post('/auth/register', {
+        const response = axios.post(request.registerUser, {
             email,
             password,
             username,
@@ -87,6 +88,7 @@ export function Register()
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     First Name<span className="text-red-600">*</span>
                                 </label>
+
                                     <input type="text" className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow" placeholder="John"
                                         onChange={(e) => setFirstName(e.target.value)}
                                     />
@@ -138,10 +140,10 @@ export function Register()
 
                             <div className="w-full px-3 my-2">
                                 <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-                                    Birthday
+                                    Birthday<span className="text-red-600">*</span>
                                 </label>
 
-                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow" type="date" placeholder="*****************"
+                                <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 shadow" type="date"
                                         onChange={(e) => setBirthday(e.target.value)}
                                     />
                             </div>

@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import Layout from "../Components/Layout/Layout";
 import axios from "../Components/Axios/axios";
 import '../styles/main.css'
+import request from "../Components/Axios/Request";
 
 function Login()
 {
@@ -9,8 +10,8 @@ function Login()
     const [password, setPassword] = useState("");
 
     const submitHandler = (e) => {e.preventDefault()
-        axios.post('/auth/login', {
-        email: email,
+        axios.post(request.fetchUserLogin, {
+        email,
         password
     })
         .then(token => {
@@ -34,7 +35,7 @@ function Login()
                 <div className="flex flex-col items-center justify-center">
                     <form className="bg-white shadow rounded px-8 pt-6 pb-8 mb-4">
                         <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Email
                                 </label>
 
@@ -44,7 +45,7 @@ function Login()
                             </div>
 
                             <div className="w-full px-3 my-2">
-                                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+                                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                                     Password
                                 </label>
 

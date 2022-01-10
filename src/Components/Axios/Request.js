@@ -12,6 +12,9 @@ const request = {
     registerUser: `/auth/register`,
     verifyUserWithToken: `/auth/userByToken`,
 
+    //Profile
+    updateInfo: `/profile/updateInfo`
+
 };
 
 export default request;

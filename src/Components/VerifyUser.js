@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from "./Axios/axios";
 import request from "./Axios/Request";
 
@@ -8,7 +8,7 @@ function VerifyUser()
 
     const [user, setUser] = React.useState(null)
 
-    React.useEffect(() => {
+    useEffect(() => {
 
         try{
             const config = {
