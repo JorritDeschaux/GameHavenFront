@@ -11,7 +11,7 @@ function Top100()
 
             <Layout/>
             <div className="container">
-                <div className="rounded-lg shadow-lg mb-2 h-screen flex flex-col sm:mx-8">
+                <div className="rounded-lg shadow-lg mb-2 h-max flex flex-col sm:mx-8">
                     <div>
 
                         <Row

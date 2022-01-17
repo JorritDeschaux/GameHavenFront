@@ -14,6 +14,8 @@ import Search from "./Views/Search";
 import Game from "./Views/Game";
 import Register from "./Views/Register";
 import Top100 from "./Views/Top100";
+import Forum from "./Views/Forum/Forum";
+import Post from "./Views/Forum/Post";
 
 function App()
 {
@@ -56,6 +58,14 @@ function App()
                         <Route exact path="/logout">
                             <Logout />
                         </Route>
+
+                        <Route exact path="/forum">
+                            <Forum />
+                        </Route>
+                        <Route exact path="/forum/post/:id">
+                            <Post />
+                        </Route>
+
                     </Switch>
                 </div>
         </Router>

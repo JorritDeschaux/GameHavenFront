@@ -13,7 +13,12 @@ const request = {
     verifyUserWithToken: `/auth/userByToken`,
 
     //Profile
-    updateInfo: `/profile/updateInfo`
+    updateInfo: `/profile/updateInfo`,
+    publicInfo: `/profile/`,
+
+    //Forum
+    fetchPosts: `/posts`,
+    fetchPostById: `/posts/`
 
 };
 

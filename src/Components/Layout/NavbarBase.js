@@ -43,7 +43,7 @@ function NavbarBase(props)
 
                     <div className="hidden md:flex items-center space-x-1">
                         <Link to="/logout" className="py-5 px-3 text-gray-300 hover:text-gray-500"><BiLogIn /> Logout</Link>
-                        <Link to="/profile" className="py-2 px-3 bg-slate-50 hover:bg-red-700 text-stone-900 hover:text-slate-50 rounded transition duration-100">Profile</Link>
+                        <Link to="/profile" className="logout py-2 px-3 bg-slate-50 hover:bg-red-700 text-stone-900 hover:text-slate-50 rounded transition duration-100">Profile</Link>
                     </div>
 
                 </div>

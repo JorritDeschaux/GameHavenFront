@@ -12,6 +12,8 @@ function Game()
     const [game, setGame] = useState('')
     const roundedRating = Math.round(game.total_Rating)
 
+    
+
     const getGame = () => {
         axios.get(request.fetchGameById + id)
             .then((response) => {
@@ -22,8 +24,6 @@ function Game()
     }
 
     useEffect(() => {
-
-        console.log(id)
         getGame()
 
     }, [])

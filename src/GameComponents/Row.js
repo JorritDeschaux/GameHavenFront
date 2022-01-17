@@ -30,8 +30,6 @@ function Row({title, fetchUrl}) {
         })
     }, [])
 
-    console.log(games)
-
     const imageClick = (props) => {
         window.location.href = "/game/" + props
     }
@@ -42,7 +40,7 @@ function Row({title, fetchUrl}) {
 
             <ul className="grid xl:grid-cols-5 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-3 p-0"> 
             {games.map((game, index) => (
-                <li key={index} className="flex flex-auto bg-gray-300 rounded-lg shadow" onClick={() => imageClick(game.id)} >
+                <li key={index} className="flex flex-auto bg-gray-300 rounded-lg shadow hover:scale-105 transition-all" onClick={() => imageClick(game.id)} >
                     <div className="flex flex-none items-center">
                         <img className="bg-black m-2 rounded-lg hover:blur-xs duration-300" width="100" height="100" src={game.cover?.url} alt=""/>
                     </div>
