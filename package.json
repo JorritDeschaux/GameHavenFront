@@ -23,7 +23,7 @@
     "startdev": "CI='' && npm run build:css && react-scripts start",
     "builddev": "CI='' && npm run build:css && react-scripts build",
     "start": "npm run build:css && react-scripts --openssl-legacy-provider start",
-    "build": "react-scripts build",
+    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
