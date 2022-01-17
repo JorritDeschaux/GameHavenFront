@@ -20,8 +20,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "startdev": "npm run build:css && react-scripts start",
-    "builddev": "npm run build:css && react-scripts build",
+    "startdev": "CI=false npm run build:css && react-scripts start",
+    "builddev": "CI=false npm run build:css && react-scripts build",
     "start": "npm run build:css && react-scripts --openssl-legacy-provider start",
     "build": "npm run build:css && react-scripts --openssl-legacy-provider build",
     "test": "react-scripts test",
