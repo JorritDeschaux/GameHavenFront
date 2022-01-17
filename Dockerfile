@@ -13,7 +13,7 @@ COPY package.json ./
 COPY package-lock.json ./
 
 RUN npm install
-RUN  npm run build
+RUN npm run build
 
 # add app
 COPY . ./
