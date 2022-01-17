@@ -2,32 +2,24 @@ name: ci/cd
 
 on: [push]
 
-jobs:        
-  test-and-push-images:
-  
+jobs:
+
+  cypress:
     runs-on: ubuntu-latest
-      
     steps:
-      - name: Cypress E2E
-      - uses: actions/checkout@v2
-      - uses: cypress-io/github-action@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
         with:
+          build: npm run build
           start: npm start
-          wait-on: "http://localhost:5000"
-          browser: chrome
-          headless: true
-          
-      - uses: actions/upload-artifact@v1
-        if: failure()
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
-      - uses: actions/upload-artifact@v1
-        if: always()
-        with:
-          name: cypress-videos
-          path: cypress/videos
-          
+          record: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  push-images:
+        needs: cypress
       - name: Checkout code
         uses: actions/checkout@v2
         
