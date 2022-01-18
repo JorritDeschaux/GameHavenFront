@@ -2,9 +2,6 @@ name: CI
 
 on: [push]
 
-env:
-  AZURE_WEB_APP: 'gamehaven'
-  DOCKER_IMAGE_NAME: 'gamehaven'
 jobs:
 
   push-images:
@@ -43,6 +40,6 @@ jobs:
         uses: Azure/webapps-deploy@v2
         with:
           # Name of the Azure Web App
-          app-name: '${{env.AZURE_WEB_APP}}'
+          app-name: 'gamehaven'
           # Applies to Web App Containers only: Specify the fully qualified container image(s) name. For example, 'myregistry.azurecr.io/nginx:latest' or 'python:3.7.2-alpine/'. For multi-container scenario multiple container image names can be provided (multi-line separated)
-          images: '${{secrets.DOCKER_LOGIN}}/${{env.DOCKER_IMAGE_NAME}}:front-latest'
+          images: 'jorritdeschaux/gamehaven:front-latest'
