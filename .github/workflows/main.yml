@@ -3,7 +3,7 @@ name: CI
 on: [push]
 
 env:
-  AZURE_WEB_APP: 'GameHaven'
+  AZURE_WEB_APP: 'gamehaven'
   DOCKER_IMAGE_NAME: 'jorritdeschaux/gamehaven'
 jobs:
 
