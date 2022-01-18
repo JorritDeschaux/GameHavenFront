@@ -20,10 +20,10 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "startdev": "CI='' && npm run build:css && react-scripts start",
-    "builddev": "CI='' && npm run build:css && react-scripts build",
-    "start": "npm run build:css && react-scripts --openssl-legacy-provider start",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider && react-scripts build",
+    "startdev": "npm run build:css && react-scripts start",
+    "builddev": "npm run build:css && react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open",
