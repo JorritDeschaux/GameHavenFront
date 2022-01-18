@@ -28,6 +28,7 @@ jobs:
           tags: jorritdeschaux/gamehaven:front-latest
           
   build-and-deploy:
+        needs: push-images
         runs-on: ubuntu-latest
         steps:
         # checkout the repo
