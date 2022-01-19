@@ -23,14 +23,14 @@ jobs:
       uses: docker/login-action@v1
       with:
         registry: https://index.docker.io/v1/
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        username: ${{ secrets.AzureAppService_ContainerUsername_ff1b070fb6f3407fa357d645b9f4278a }}
+        password: ${{ secrets.AzureAppService_ContainerPassword_993377437e1b4deaaf57e1809243bf0f }}
 
     - name: Build and push container image to registry
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.DOCKER_USERNAME }}/gamehaven:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_ff1b070fb6f3407fa357d645b9f4278a }}/gamehaven:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -47,5 +47,5 @@ jobs:
       with:
         app-name: 'gamehaven'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_e3e367010e2d43d7944e24d8d96da9b2 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_183c21017a7040aba8446a1a7a3becf5 }}/gamehaven:${{ github.sha }}'
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_d6ff13be5a5a4d759ebe619bd043ebd9 }}
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_ff1b070fb6f3407fa357d645b9f4278a }}/gamehaven:${{ github.sha }}'
