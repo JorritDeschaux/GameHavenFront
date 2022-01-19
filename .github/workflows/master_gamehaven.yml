@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_183c21017a7040aba8446a1a7a3becf5 }}/gamehaven:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.DOCKER_USERNAME }}/gamehaven:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
